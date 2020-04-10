@@ -24,16 +24,18 @@ public class HelloReceive {
 //    }
 
 
-    @RabbitListener(queues="fanout.A")
+    @RabbitListener(queues = "fanout.A")
     public void processA(String str1) {
-        System.out.println("ReceiveA:"+str1);
+        System.out.println("ReceiveA:" + str1);
     }
-    @RabbitListener(queues="fanout.B")
+
+    @RabbitListener(queues = "fanout.B")
     public void processB(String str) {
-        System.out.println("ReceiveB:"+str);
+        System.out.println("ReceiveB:" + str);
     }
-    @RabbitListener(queues="fanout.C")
+
+    @RabbitListener(queues = "fanout.C")
     public void processC(String str) {
-        System.out.println("ReceiveC:"+str);
+        System.out.println("ReceiveC:" + str);
     }
 }
